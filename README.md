@@ -1,23 +1,30 @@
-# NovelSeek - When Agent Becomes the Scientist – Building Closed-Loop System from Hypothesis to Verification
+# Intern·Agent: When Agent Becomes the Scientist – Building Closed-Loop System from Hypothesis to Verification
 
-[[ Paper 📓 ]](https://github.com/Alpha-Innovator/NovelSeek) [[ Website 🏠 ]](https://github.com/Alpha-Innovator/NovelSeek) [[ NovelSeek Examples 🤗 ]](https://huggingface.co/U4R/NovelSeek)
+[[ Paper 📓 ]](https://arxiv.org/abs/2505.16938) [[ Apply Page 💡 ]](https://genix.intern-ai.org.cn/home) [[ Website 🏠 ]](https://alpha-innovator.github.io/InternAgent-project-page) [[ Intern·Agent Examples 🤗 ]](https://huggingface.co/U4R/InternAgent)
 
 <i>
 From One Idea to Autonomous Experimentation
 </i>
 </div>
 
+# 🔥 News
+  - <p style='text-align:justify'><i>2025.07.17</i>: &nbsp; 🔥 Intern·Agent has been open-sourced.
+  - <p style='text-align:justify'><i>2025.07.10</i>: &nbsp; 🌟 NovelSeek has be renamed to <b>Intern·Agent</b>. This change embodies our hopeful vision for autonomous scientific research framework, and we hope it will empower all researchers to achieve great scientific discoveries.</p>
+
+
 ## 📖 Overview
 
-![NovelSeek](/images/novelseek.png)
+![Intern·Agent](/images/InternAgent_Fig1.png)
 
-NovelSeek can support **12** types of scientific research tasks ranging from the AI field to the science field, including reaction yield prediction, molecular dynamics, power flow estimation, time series forecasting, transcription prediction, enhancer activity prediction, sentiment classification, 2D image classification, 3D point classification, 2D semantic segmentation, 3D autonomous driving, large vision-language model fine-tuning.
+Intern·Agent can support **12** types of scientific research tasks ranging from the AI field to the science field, including reaction yield prediction, molecular dynamics, power flow estimation, time series forecasting, transcription prediction, enhancer activity prediction, sentiment classification, 2D image classification, 3D point classification, 2D semantic segmentation, 3D autonomous driving, large vision-language model fine-tuning.
 
 ## 🌟 Core Features
 
-![Framework](/images/framework.png)
+![Framework](/images/InternAgent_pipeline.png)
 
-NovelSeek covers three main capabilities: (1) **Self-evolving idea generation with human-interactive feedback**, (2) **Idea-to-methodology construction**, and (3) **Evolutionary experimental planning and execution**. NovelSeek is a unified, closed-loop multi-agent system designed to automate and accelerate innovative research across scientific domains. Through intelligent agent collaboration, NovelSeek enables **end-to-end automation** from idea generation and methodology construction to experimental execution, dramatically enhancing research efficiency and creativity.
+Intern·Agent covers three main capabilities: (1) **Self-evolving idea generation with human-interactive feedback**, (2) **Idea-to-methodology construction**, and (3) **Evolutionary experimental planning and execution**. 
+
+It is a unified, closed-loop multi-agent system designed to automate and accelerate innovative research across scientific domains. Through intelligent agent collaboration, our system enables **end-to-end automation** from idea generation and methodology construction to experimental execution, dramatically enhancing research efficiency and creativity.
 
 ### 💡 Self-Evolving Idea Generation with Human-Interactive Feedback
 - Autonomous generation, selection, and evolution of innovative research ideas through multi-agent collaboration
@@ -41,7 +48,7 @@ NovelSeek covers three main capabilities: (1) **Self-evolving idea generation wi
 
 ---
 
-**NovelSeek** delivers an "end-to-end algorithmic innovation", empowering AI+X researchers to rapidly complete the full research loop—from idea to methodology to experimental validation—accelerating scientific discovery and breakthroughs.
+**Intern·Agent** delivers an "end-to-end algorithmic innovation", empowering AI+X researchers to rapidly complete the full research loop—from idea to methodology to experimental validation—accelerating scientific discovery and breakthroughs.
 
 ## 🔬 Supported Research Tasks
 
@@ -63,5 +70,38 @@ NovelSeek covers three main capabilities: (1) **Self-evolving idea generation wi
 
 ## 🚀 Performance
 
-By leveraging multi-source knowledge injection, NovelSeek intelligently generates and verifies research ideas across multiple domains. Our system has significantly improved research efficiency in Suzuki Yield Prediction, Enhancer Activity Prediction, Transcription Prediction for Perturbation Respons, and so on.
+By leveraging multi-source knowledge injection, our system intelligently generates and verifies research ideas across multiple domains. Our system has significantly improved research efficiency in Suzuki Yield Prediction, Enhancer Activity Prediction, Transcription Prediction for Perturbation Respons, and so on.
 
+## 🚀 How to use the early version, Dolphin?
+
+### Installation
+
+```
+conda create -n dolphin python=3.11
+conda activate dolphin
+
+# Install PyPI requirements
+pip install -r requirements.txt
+```
+
+### Start Auto-Research using Dolphin
+
+```shell
+bash launch_dolphin.sh
+
+# modify launch_dolphin.py line # line 189 if round > 0
+# exp_base_file_list = [List your exp dir] 
+```
+
+- Note that you need to add api_key and specify the model and topic in `launch_dolphin.sh`. You can refer to the [doc](./docs/ollama_doc.md) if you want to use self-deployed model.
+- Data for Point Classfication, Image Classification, and Sentiment Classification tasks can be downloaded [here](https://drive.google.com/drive/folders/1mq1y7EWW9dgPlS26hXNa3wxL7_2vvNju?usp=sharing).
+
+## Citation
+```
+@article{team2025novelseek,
+  title={Intern·Agent: When Agent Becomes the Scientist--Building Closed-Loop System from Hypothesis to Verification},
+  author={Team, Intern·Agent and Zhang, Bo and Feng, Shiyang and Yan, Xiangchao and Yuan, Jiakang and Yu, Zhiyin and He, Xiaohan and Huang, Songtao and Hou, Shaowei and Nie, Zheng and others},
+  journal={arXiv preprint arXiv:2505.16938},
+  year={2025}
+}
+```
