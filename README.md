@@ -1,6 +1,6 @@
-# Intern·Agent: When Agent Becomes the Scientist – Building Closed-Loop System from Hypothesis to Verification
+# InternAgent: When Agent Becomes the Scientist – Building Closed-Loop System from Hypothesis to Verification
 
-[[ Paper 📓 ]](https://arxiv.org/abs/2505.16938) [[ Apply Page 💡 ]](https://genix.intern-ai.org.cn/home) [[ Website 🏠 ]](https://alpha-innovator.github.io/InternAgent-project-page) [[ Intern·Agent Examples 🤗 ]](https://huggingface.co/U4R/InternAgent)
+[[ Paper 📓 ]](https://arxiv.org/abs/2505.16938) [[ Apply Page 💡 ]]() [[ Website 🏠 ]](https://alpha-innovator.github.io/InternAgent-project-page) [[ InternAgent Examples 🤗 ]](https://huggingface.co/U4R/InternAgent)
 
 <i>
 From One Idea to Autonomous Experimentation
@@ -8,21 +8,21 @@ From One Idea to Autonomous Experimentation
 </div>
 
 # 🔥 News
-  - <p style='text-align:justify'><i>2025.07.17</i>: &nbsp; 🔥 Intern·Agent has been open-sourced.
-  - <p style='text-align:justify'><i>2025.07.10</i>: &nbsp; 🌟 NovelSeek has be renamed to <b>Intern·Agent</b>. This change embodies our hopeful vision for autonomous scientific research framework, and we hope it will empower all researchers to achieve great scientific discoveries.</p>
+  - <p style='text-align:justify'><i>2025.07.17</i>: &nbsp; 🔥 The source code of InternAgent has been partially open-sourced.
+  - <p style='text-align:justify'><i>2025.07.10</i>: &nbsp; NovelSeek has be renamed to <b>InternAgent</b>. This change embodies our hopeful vision for autonomous scientific research framework, and we hope it will empower all researchers to achieve great scientific discoveries.</p>
 
 
 ## 📖 Overview
 
-![Intern·Agent](/images/InternAgent_Fig1.png)
+![InternAgent](/images/internagent_overall.png)
 
-Intern·Agent can support **12** types of scientific research tasks ranging from the AI field to the science field, including reaction yield prediction, molecular dynamics, power flow estimation, time series forecasting, transcription prediction, enhancer activity prediction, sentiment classification, 2D image classification, 3D point classification, 2D semantic segmentation, 3D autonomous driving, large vision-language model fine-tuning.
+InternAgent can support **12** types of scientific research tasks ranging from the AI field to the science field, including reaction yield prediction, molecular dynamics, power flow estimation, time series forecasting, transcription prediction, enhancer activity prediction, sentiment classification, 2D image classification, 3D point classification, 2D semantic segmentation, 3D autonomous driving, large vision-language model fine-tuning.
 
 ## 🌟 Core Features
 
-![Framework](/images/InternAgent_pipeline.png)
+![Framework](/images/internagent_framework.png)
 
-Intern·Agent covers three main capabilities: (1) **Self-evolving idea generation with human-interactive feedback**, (2) **Idea-to-methodology construction**, and (3) **Evolutionary experimental planning and execution**. 
+InternAgent covers three main capabilities: (1) **Self-evolving idea generation with human-interactive feedback**, (2) **Idea-to-methodology construction**, and (3) **Evolutionary experimental planning and execution**. 
 
 It is a unified, closed-loop multi-agent system designed to automate and accelerate innovative research across scientific domains. Through intelligent agent collaboration, our system enables **end-to-end automation** from idea generation and methodology construction to experimental execution, dramatically enhancing research efficiency and creativity.
 
@@ -48,7 +48,7 @@ It is a unified, closed-loop multi-agent system designed to automate and acceler
 
 ---
 
-**Intern·Agent** delivers an "end-to-end algorithmic innovation", empowering AI+X researchers to rapidly complete the full research loop—from idea to methodology to experimental validation—accelerating scientific discovery and breakthroughs.
+**InternAgent** delivers an "end-to-end algorithmic innovation", empowering AI+X researchers to rapidly complete the full research loop—from idea to methodology to experimental validation—accelerating scientific discovery and breakthroughs.
 
 ## 🔬 Supported Research Tasks
 
@@ -99,8 +99,8 @@ bash launch_dolphin.sh
 ## Citation
 ```
 @article{team2025novelseek,
-  title={Intern·Agent: When Agent Becomes the Scientist--Building Closed-Loop System from Hypothesis to Verification},
-  author={Team, Intern·Agent and Zhang, Bo and Feng, Shiyang and Yan, Xiangchao and Yuan, Jiakang and Yu, Zhiyin and He, Xiaohan and Huang, Songtao and Hou, Shaowei and Nie, Zheng and others},
+  title={InternAgent: When Agent Becomes the Scientist--Building Closed-Loop System from Hypothesis to Verification},
+  author={Team, InternAgent and Zhang, Bo and Feng, Shiyang and Yan, Xiangchao and Yuan, Jiakang and Yu, Zhiyin and He, Xiaohan and Huang, Songtao and Hou, Shaowei and Nie, Zheng and others},
   journal={arXiv preprint arXiv:2505.16938},
   year={2025}
 }
