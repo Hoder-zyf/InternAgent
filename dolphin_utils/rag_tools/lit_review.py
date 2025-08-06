@@ -8,6 +8,7 @@ from dolphin_utils.rag_tools.prompts import *
 from dolphin_utils.rag_tools.lit_review_tools import parse_and_execute, format_papers_for_printing, print_top_papers_from_paper_bank, \
     dedup_paper_bank, parse_io_description
 from dolphin_utils.rag_tools.utils import cache_output, call_api
+from ..llm_utils import extract_json_between_markers
 
 
 def initial_search(topic_description, openai_client, model, seed):
@@ -75,7 +76,10 @@ def collect_papers(topic_description, openai_client, model, seed, grounding_k=10
         ## score each paper
         _, response, cost = paper_score(paper_lst, topic_description, openai_client, model, seed, task_attribute=True, io_description=io_description)
         total_cost += cost
-        response = json.loads(response.strip())
+        try:
+            response = json.loads(response.strip())
+        except:
+            response = extract_json_between_markers(response)
 
         ## initialize all scores to 0 then fill in gpt4 scores
         for k, v in paper_bank.items():

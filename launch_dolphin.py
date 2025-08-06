@@ -169,6 +169,14 @@ if __name__ == "__main__":
             api_key=os.environ["DEEPSEEK_API_KEY"],
             base_url="https://api.deepseek.com"
         )
+    elif args.model == "Intern-S1":
+        import openai
+        print(f"Using OpenAI API with model {args.model}.")
+        client_model = args.model
+        client = openai.OpenAI(
+            api_key=os.environ["INS1_API_KEY"],
+            base_url="https://chat.intern-ai.org.cn/api/v1/"
+        )
     elif args.model.startswith("localhost"):
         import openai
         print(f"Using OpenAI API with locally deployed model: {args.model}.")

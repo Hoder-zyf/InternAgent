@@ -11,6 +11,8 @@ def cal_price(model, usage):
         return (0.005 * usage.prompt_tokens + 0.015 * usage.completion_tokens) / 1000.0
     elif model == 'claude-3-7-sonnet-20250219':
         return (0.003 * usage.prompt_tokens + 0.015 * usage.completion_tokens) / 1000.0
+    elif model == 'Intern-S1':
+        return 0
     elif "localhost" in model:
         return 0
     else:
@@ -25,7 +27,8 @@ def get_response_from_llm(
     system_message,
     print_debug=False,
     msg_history=None,
-    temperature=0.75,
+    max_tokens=4096,
+    temperature=0.7,
 ):
     if msg_history is None:
         msg_history = []
@@ -115,6 +118,26 @@ def get_response_from_llm(
         price = cal_price(model, response.usage)
         content = response.choices[0].message.content
         new_msg_history = new_msg_history + [{"role": "assistant", "content": content}]
+    
+    elif model == "Intern-S1":
+        new_msg_history = msg_history + [{"role": "user", "content": msg}]
+        response = client.chat.completions.create(
+            model="intern-latest",
+            messages=[
+                {"role": "system", "content": system_message},
+                *new_msg_history,
+            ],
+            temperature=temperature,
+            max_tokens=max_tokens,
+            stop=None
+        )
+        price = cal_price(model, response.usage)
+        content = response.choices[0].message.content
+        # remove thinking content
+        if "</think>" in content:
+            content = content.split("</think>", 1)[1].strip()
+        else:
+            content = content
     else:
         raise ValueError(f"Model {model} not supported.")
 

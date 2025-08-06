@@ -8,6 +8,7 @@ From One Idea to Autonomous Experimentation
 </div>
 
 ## 🔥 News
+  - <p style='text-align:justify'><i>2025.08.06</i>: &nbsp; 🔥 InternAgent now supports Intern-S1 which combines strong general-task capabilities with state-of-the-art performance on a wide range of scientific tasks. Check <a href="https://internlm.intern-ai.org.cn/api/document">here</a> for how to use Intern-S1.
   - <p style='text-align:justify'><i>2025.07.17</i>: &nbsp; 🔥 The source code of InternAgent has been partially open-sourced. The complete version of InternAgent (covering 12 types of tasks for autonomous scientific research) will be open-sourced soon. This code repository can be used for full-cycle autonomous scientific research, ranging from hypothesis generation to automated experimental execution. It includes the source code for our initial version, covering paper retrieval, idea generation, coding, and experimental execution.
   - <p style='text-align:justify'><i>2025.07.10</i>: &nbsp; NovelSeek has be renamed to <b>InternAgent</b>. This change embodies our hopeful vision for autonomous scientific research framework, and we hope it will empower all researchers to achieve great scientific discoveries.</p>
 
