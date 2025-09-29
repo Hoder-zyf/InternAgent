@@ -8,6 +8,7 @@ From One Idea to Autonomous Experimentation
 </div>
 
 ## 🔥 News
+  - <p style='text-align:justify'><i>2025.09.12</i>: &nbsp; 🔥 Our latest <b>coding agent InternAgent-MLE</b> has achieved the championship in MLE-bench with <b>36.44%</b> medal rate, ranking <b>#1</b> among all competing methods, see details at <a href="https://github.com/openai/mle-bench">openai/mle-bench</a>. 
   - <p style='text-align:justify'><i>2025.08.06</i>: &nbsp; 🔥 InternAgent now supports Intern-S1 which combines strong general-task capabilities with state-of-the-art performance on a wide range of scientific tasks. Check <a href="https://internlm.intern-ai.org.cn/api/document">here</a> for how to use Intern-S1.
   - <p style='text-align:justify'><i>2025.07.17</i>: &nbsp; 🔥 The source code of InternAgent has been partially open-sourced. The complete version of InternAgent (covering 12 types of tasks for autonomous scientific research) will be open-sourced soon. This code repository can be used for full-cycle autonomous scientific research, ranging from hypothesis generation to automated experimental execution. It includes the source code for our initial version, covering paper retrieval, idea generation, coding, and experimental execution.
   - <p style='text-align:justify'><i>2025.07.10</i>: &nbsp; NovelSeek has be renamed to <b>InternAgent</b>. This change embodies our hopeful vision for autonomous scientific research framework, and we hope it will empower all researchers to achieve great scientific discoveries.</p>
@@ -66,6 +67,25 @@ It is a unified, closed-loop multi-agent system designed to automate and acceler
 - Autonomous Driving
 - VLM & LLM Fine-tuning
 - ......
+
+## 🎉 Benchmark Results
+### 🚀  MLE-Bench: Record-Breaking Performance in Just 12 Hours!
+
+InternAgent-MLE has achieved **36.44%** medal rate on the MLE-Bench, securing the **#1** position among all competing methods - and remarkably, this was accomplished in **only 12 hours** of running time!
+
+| Agent | Low == Lite (%) | Medium (%) | High (%) | All (%) | Running Time (hours) | Date |
+|---------|--------|-----------|---------|----------|--------|------
+| [InternAgent-MLE](https://github.com/Alpha-Innovator/InternAgent/) deepseek-r1 | 62.12 ± 3.03 | 26.32 ± 2.63 | 24.44 ± 2.22| **36.44 ± 1.18** | **12** | 2025-09-12	
+| Neo multi-agent | 48.48 ± 1.52 | 29.82 ± 2.32	| 24.44 ± 2.22 | 34.22 ± 0.89 | 36 | 2025-07-28 
+| R&D-Agent o3 + GPT-4.1 | 51.52 ± 6.9 | 19.3 ± 5.5 | 26.67 ± 0 | 30.22 ± 1.5 | 24 | 2025-08-15 
+| ML-Master deepseek-r1 | 48.5 ± 1.5 | 20.2 ± 2.3 | 24.4 ± 2.2| 29.3 ± 0.8 | 12 | 2025-06-17 
+| R&D-Agent o1-preview | 48.18 ± 2.49 | 8.95 ± 2.36 | 18.67 ± 2.98 | 22.4 ± 1.1 | 24 | 2025-05-14 
+| AIDE o1-preview | 34.3 ± 2.4 | 8.8 ± 1.1 | 10.0 ± 1.9 | 16.9 ± 1.1 | 24 | 2024-10-08 
+| AIDE gpt-4o-2024-08-06 | 19.0 ± 1.3 | 3.2 ± 0.5 | 5.6 ± 1.0 | 8.6 ± 0.5 | 24 | 2024-10-08 
+| AIDE claude-3-5-sonnet-20240620 | 19.4 ± 4.9 | 2.6 ± 1.5 | 2.3 ± 2.3 | 7.5 ± 1.8 | 24 | 2024-10-08 
+| OpenHands gpt-4o-2024-08-06 | 11.5 ± 3.4 | 2.2 ± 1.3 | 1.9 ± 1.9 | 5.1 ± 1.3 | 24 | 2024-10-08 
+| AIDE llama-3.1-405b-instruct | 8.3 ± 2.6 | 1.2 ± 0.8 | 0.0 ± 0.0 | 3.1 ± 0.9 | 24 | 2024-10-08 
+| MLAB gpt-4o-2024-08-06 | 4.2 ± 1.5 | 0.0 ± 0.0 | 0.0 ± 0.0 | 1.3 ± 0.5 |  24 | 2024-10-08 
 
 
 ## 🚀 How to use the early version, Dolphin?
