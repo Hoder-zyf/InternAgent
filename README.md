@@ -70,6 +70,46 @@ It is a unified, closed-loop multi-agent system designed to automate and acceler
 - ......
 
 ## 🎉 Benchmark Results
+
+### Results on 12 different types of research tasks
+
+The results report both maximum performance and mean performance (i.e., the average across runs with performance gains) achieved by InternAgent and Dolphin. InternAgent consistently improves upon the baseline and outperforms Dolphin across all tasks, spanning AI and scientific task domains.
+
+#### Max Performance (per task)
+
+| Task | Metric | Baseline | Dolphin | InternAgent |
+|---|---|---:|---:|---:|
+| AutoRYP | R^2 ↑ | 27.6 | 31.8 (+4.2) | **35.4 (+7.8)** |
+| AutoMD | Forces-MAE ↓ | 0.158 | 0.152 | **0.148** |
+| AutoPower | RMSE ↓ | 0.00473 | 0.00455 | **0.00426** |
+| AutoTSF | MAE ↓ | 0.4382 | 0.4627 | **0.4331** |
+| AutoTPPR | MSE ↓ | 0.197 | 0.173 | **0.146** |
+| AutoEAP | HK-PCC ↑ | 0.65 | 0.76 | **0.79** |
+| AutoSenCls | Acc ↑ | 91.0 | 92.5 (+1.5) | **93.5 (+2.5)** |
+| Auto2DCls | Top-1 Acc ↑ | 81.2 | 82.0 (+0.8) | **83.3 (+2.1)** |
+| Auto3DCls | OA ↑ | 91.0 | 93.9 (+2.9) | **95.5 (+4.5)** |
+| Auto2DSeg | mIoU ↑ | 78.8 | - | **81.0 (+2.2)** |
+| AutoPCDet | mAP ↑ | 65.0 | - | **65.9 (+0.9)** |
+| AutoVLM | QA ↑ | 67.1 | - | **67.6 (+0.5)** |
+
+#### Average Performance (per task)
+
+| Task | Metric | Baseline | Dolphin | InternAgent |
+|---|---|---:|---:|---:|
+| AutoRYP | R^2 ↑ | 27.6 | 31.3 (+3.7) | **33.5 (+5.9)** |
+| AutoMD | Forces-MAE ↓ | 0.158 | 0.155 | **0.152** |
+| AutoPower | RMSE ↓ | 0.00473 | 0.00459 | **0.00447** |
+| AutoTSF | MAE ↓ | 0.4382 | - | **0.4346** |
+| AutoTPPR | MSE ↓ | 0.197 | 0.179 | **0.170** |
+| AutoEAP | HK-PCC ↑ | 0.65 | 0.73 | **0.77** |
+| AutoSenCls | Acc ↑ | 91.0 | 91.8 (+0.8) | **92.5 (+1.5)** |
+| Auto2DCls | Top-1 Acc ↑ | 81.2 | 81.8 (+0.6) | **82.2 (+1.0)** |
+| Auto3DCls | OA ↑ | 91.0 | 92.0 (+1.0) | **93.4 (+2.4)** |
+| Auto2DSeg | mIoU ↑ | 78.8 | - | **80.1 (+1.3)** |
+| AutoPCDet | mAP ↑ | 65.0 | - | **65.7 (+0.7)** |
+| AutoVLM | QA ↑ | 67.1 | - | **67.6 (+0.5)** |
+
+
 ### 👨‍💻  MLE-Bench: Record-Breaking Performance in Just 12 Hours!
 
 InternAgent-MLE has achieved **36.44%** medal rate on the MLE-Bench, securing the **#1** position among all competing methods - and remarkably, this was accomplished in **only 12 hours** of running time!
