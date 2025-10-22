@@ -158,6 +158,9 @@ conda activate InternAgent
 
 # Install PyPI requirements
 pip install -r requirements.txt
+
+# Install aider
+python -m pip install -U --upgrade-strategy only-if-needed aider-chat
 ```
 ### Set your API key
 - Rename `.env.example` to `.env` and fill in your API keys.
