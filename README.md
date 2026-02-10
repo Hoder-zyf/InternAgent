@@ -1,6 +1,9 @@
 # InternAgent: When Agent Becomes the Scientist – Building Closed-Loop System from Hypothesis to Verification
 
-[[ Paper 📓 ]](https://arxiv.org/abs/2505.16938) [[ Apply Page 💡 ]](https://discovery.intern-ai.org.cn) [[ Website 🏠 ]](https://alpha-innovator.github.io/InternAgent-project-page)
+[[ InternAgent 1.0 📓 ]](https://arxiv.org/abs/2505.16938)
+[[ InternAgent 1.5 📓 ]](https://arxiv.org/pdf/2602.08990) 
+[[ Apply Page 💡 ]](https://discovery.intern-ai.org.cn) 
+[[ Website 🏠 ]](https://alpha-innovator.github.io/InternAgent-project-page)
 
 <i>
 From One Idea to Autonomous Experimentation
