@@ -3,8 +3,7 @@
 [[ InternAgent 1.0 📓 ]](https://arxiv.org/abs/2505.16938)
 [[ InternAgent 1.5 📓 ]](https://huggingface.co/papers/2602.08990) 
 
-[[ Apply Page 💡 ]](https://discovery.intern-ai.org.cn) 
-[[ Website 🏠 ]](https://alpha-innovator.github.io/InternAgent-project-page)
+[[ Website 🏠 ]](https://discovery.intern-ai.org.cn) 
 [[ HuggingFace 🤗 ]](https://huggingface.co/collections/InternScience/internagent)
 
 <i>
