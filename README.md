@@ -13,10 +13,10 @@ From One Idea to Autonomous Experimentation
 
 ## 🔥 News
   - <p style='text-align:justify'>
-    <i>2026.2.10</i>: &nbsp; 🔥 We are pleased to announce the official release of the 
-    <b><a href="https://huggingface.co/papers/2602.08990" target="_blank">InternAgent 1.5 Technical Report</a>.</b> 
+    <b><i>2026.2.10</i>: &nbsp; 🔥 We are pleased to announce the official release of the 
+    <a href="https://huggingface.co/papers/2602.08990" target="_blank">InternAgent 1.5 Technical Report</a>.
     InternAgent 1.5 now supports scientific discovery tasks across multiple disciplines, 
-    including Physical, Biology, Earth, and other scientific domains.
+    including Physical, Biology, Earth, and other scientific domains.</b> 
 
   - <p style='text-align:justify'><i>2025.10.13</i>: &nbsp; Our InternAgent-1.0 code has been fully open-sourced, supporting end-to-end automation and autonomous evolution across 12 scientific research tasks.
   - <p style='text-align:justify'><i>2025.09.29</i>: &nbsp; 🔥 Our <b>deep research agent, FlowSearch</b>, demonstrates strong competitiveness across the GAIA, HLE, GPQA, and TRQA benchmarks, achieving state-of-the-art results on multiple tasks.
