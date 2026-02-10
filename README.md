@@ -8,12 +8,12 @@ From One Idea to Autonomous Experimentation
 </div>
 
 ## 🔥 News
-  <p style='text-align:justify'>
+  - <p style='text-align:justify'>
     <i>2026.2.10</i>: &nbsp; 🔥 We are pleased to announce the official release of the 
     <b><a href="https://arxiv.org/pdf/2602.08990" target="_blank">InternAgent 1.5 Technical Report</a>.</b> 
     InternAgent 1.5 now supports scientific discovery tasks across multiple disciplines, 
     including Physical, Biology, Earth, and other scientific domains.
-  </p>
+
   - <p style='text-align:justify'><i>2025.10.13</i>: &nbsp; Our InternAgent-1.0 code has been fully open-sourced, supporting end-to-end automation and autonomous evolution across 12 scientific research tasks.
   - <p style='text-align:justify'><i>2025.09.29</i>: &nbsp; 🔥 Our <b>deep research agent, FlowSearch</b>, demonstrates strong competitiveness across the GAIA, HLE, GPQA, and TRQA benchmarks, achieving state-of-the-art results on multiple tasks.
   - <p style='text-align:justify'><i>2025.09.12</i>: &nbsp; 🔥 Our latest <b>coding agent AutoMLGen</b> has achieved the championship in MLE-bench with <b>36.44%</b> medal rate, ranking <b>#1</b> among all competing methods, see details at <a href="https://github.com/openai/mle-bench">openai/mle-bench</a>. 
