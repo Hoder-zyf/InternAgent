@@ -4,6 +4,7 @@
 [[ InternAgent 1.5 📓 ]](https://huggingface.co/papers/2602.08990) 
 [[ Apply Page 💡 ]](https://discovery.intern-ai.org.cn) 
 [[ Website 🏠 ]](https://alpha-innovator.github.io/InternAgent-project-page)
+[[ HuggingFace 🤗 ]](https://huggingface.co/collections/InternScience/internagent)
 
 <i>
 From One Idea to Autonomous Experimentation
@@ -193,7 +194,7 @@ We provide the `tasks` mentioned in our technical report as examples, and each t
 
 ## Citation
 ```
-@article{team2025novelseek,
+@article{feng2026internagent,
   title={InternAgent-1.5: A Unified Agentic Framework for Long-Horizon Autonomous Scientific Discovery},
   author={Shiyang Feng, Runmin Ma, Xiangchao Yan, Yue Fan, Yusong Hu, Songtao Huang, Shuaiyu Zhang, Zongsheng Cao, Tianshuo Peng, Jiakang Yuan, Zijie Guo, Zhijie Zhong, Shangheng Du, Weida Wang, Jinxin Shi, Yuhao Zhou, Xiaohan He, Zhiyin Yu, Fangchen Yu, Bihao Zhan, Qihao Zheng, Jiamin Wu, Mianxin Liu, Chi Zhang, Shaowei Hou, Shuya Li, Yankai Jiang, Wenjie Lou, Lilong Wang, Zifu Wang, Jiong Wang, Wanghan Xu, Yue Deng, Dongrui Liu, Yiheng Wang, Wenlong Zhang, Fenghua Ling, Shufei Zhang, Xiaosong Wang, Shuangjia Zheng, Xun Huang, Siqi Sun, Shuyue Hu, Peng Ye, Chunfeng Song, Bin Wang, Conghui He, Yihao Liu, Xin Li, Qibin Hou, Tao Chen, Xiangyu Yue, Bin Wang, Liang He, Dahua Lin, Bowen Zhou, Bo Zhang, Lei Bai},
   journal={arXiv preprint arXiv:2602.08990},
