@@ -1,7 +1,7 @@
 # InternAgent: When Agent Becomes the Scientist – Building Closed-Loop System from Hypothesis to Verification
 
 [[ InternAgent 1.0 📓 ]](https://arxiv.org/abs/2505.16938)
-[[ InternAgent 1.5 📓 ]](https://arxiv.org/pdf/2602.08990) 
+[[ InternAgent 1.5 📓 ]](https://huggingface.co/papers/2602.08990) 
 [[ Apply Page 💡 ]](https://discovery.intern-ai.org.cn) 
 [[ Website 🏠 ]](https://alpha-innovator.github.io/InternAgent-project-page)
 
@@ -13,7 +13,7 @@ From One Idea to Autonomous Experimentation
 ## 🔥 News
   - <p style='text-align:justify'>
     <i>2026.2.10</i>: &nbsp; 🔥 We are pleased to announce the official release of the 
-    <b><a href="https://arxiv.org/pdf/2602.08990" target="_blank">InternAgent 1.5 Technical Report</a>.</b> 
+    <b><a href="https://huggingface.co/papers/2602.08990" target="_blank">InternAgent 1.5 Technical Report</a>.</b> 
     InternAgent 1.5 now supports scientific discovery tasks across multiple disciplines, 
     including Physical, Biology, Earth, and other scientific domains.
 
