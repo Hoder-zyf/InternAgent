@@ -1,4 +1,4 @@
-# InternAgent: When Agent Becomes the Scientist – Building Closed-Loop System from Hypothesis to Verification
+# InternAgent-1.5: A Unified Agentic Framework for Long-Horizon Autonomous Scientific Discovery
 
 [[ InternAgent 1.0 📓 ]](https://arxiv.org/abs/2505.16938)
 [[ InternAgent 1.5 📓 ]](https://huggingface.co/papers/2602.08990) 
