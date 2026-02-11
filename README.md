@@ -10,13 +10,23 @@
 From One Idea to Autonomous Experimentation
 </i>
 </div>
+<p align="center">
+  <img src="assets/benchmark.png" alt="Benchmark" width="80%">
+  <br>
+  <em>Figure 1: Performance comparison on GAIA, HLE, GPQA, and FrontierScience benchmarks</em>
+</p>
+
+<p align="center">
+  <img src="assets/capability.png" alt="Capability" width="80%">
+  <br>
+  <em>Figure 2: End-to-end scientific discovery capabilities across multiple domains</em>
+</p>
 
 ## 🔥 News
   - <p style='text-align:justify'>
-    <b><i>2026.2.10</i>: &nbsp; 🔥 We are pleased to announce the official release of the 
+    <b><i>2026.2.10</i>:   🔥 We are pleased to announce the official release of the
     <a href="https://huggingface.co/papers/2602.08990" target="_blank">InternAgent 1.5 Technical Report</a>.
-    InternAgent 1.5 now supports scientific discovery tasks across multiple disciplines, 
-    including Physical, Biology, Earth, and other scientific domains.</b> 
+    InternAgent 1.5 achieves leading performance on scientific reasoning benchmarks including GAIA, HLE, GPQA, and FrontierScience, and supports end-to-end autonomous scientific discovery tasks across Physical, Biology, Earth, and Life Science domains, enabling both algorithm discovery and empirical discovery (computational/wet lab experiments).</b>
 
   - <p style='text-align:justify'><i>2025.10.13</i>: &nbsp; Our InternAgent-1.0 code has been fully open-sourced, supporting end-to-end automation and autonomous evolution across 12 scientific research tasks.
   - <p style='text-align:justify'><i>2025.09.29</i>: &nbsp; 🔥 Our <b>deep research agent, FlowSearch</b>, demonstrates strong competitiveness across the GAIA, HLE, GPQA, and TRQA benchmarks, achieving state-of-the-art results on multiple tasks.
