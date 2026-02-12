@@ -34,7 +34,7 @@ body:
     id: baseline_repro
     attributes:
       label: Baseline reproduction (minimal)
-      description: Keep it minimal but reproducible: provide the commit/tag + one key command/step (this is the only “command” field we keep).
+      description: "Keep it minimal but reproducible: provide the commit/tag + one key command/step (this is the only 'command' field we keep)."
       placeholder: |
         commit/tag: <fill in>
         run: <one command or minimal steps>
