@@ -7,15 +7,16 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <style>
     :root {
-      --bg: #0f1419;
-      --surface: #1a2332;
-      --border: #2d3a4d;
-      --text: #e6edf3;
-      --text-muted: #8b949e;
-      --accent: #58a6ff;
-      --accent-hover: #79b8ff;
-      --success: #3fb950;
-      --error: #f85149;
+      --bg: #1c1917;
+      --surface: #292524;
+      --border: #44403c;
+      --text: #e7e5e4;
+      --text-muted: #a8a29e;
+      --accent: #22c55e;
+      --accent-hover: #4ade80;
+      --success: #22c55e;
+      --error: #ef4444;
+      --link: #38bdf8;
     }
     * { box-sizing: border-box; }
     body {
@@ -61,7 +62,30 @@
       transition: background 0.2s;
     }
     .btn:hover { background: var(--accent-hover); }
-    .btn-subscribe { padding: 0.4rem 0.8rem; font-size: 0.85rem; }
+    .btn-subscribe {
+      padding: 0.35rem 0.75rem;
+      font-size: 0.8rem;
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      white-space: nowrap;
+    }
+    .btn-subscribe:hover {
+      background: rgba(34, 197, 94, 0.12);
+      color: var(--accent-hover);
+      border-color: var(--accent-hover);
+    }
+    .btn-subscribe-done {
+      display: inline-block;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      white-space: nowrap;
+      cursor: default;
+    }
     .table-wrap {
       overflow-x: auto;
       border-radius: 8px;
@@ -77,6 +101,7 @@
       padding: 0.75rem 1rem;
       text-align: left;
       border-bottom: 1px solid var(--border);
+      vertical-align: middle;
     }
     th {
       font-weight: 600;
@@ -85,12 +110,41 @@
       white-space: nowrap;
     }
     tr:last-child td { border-bottom: none; }
-    tr:hover td { background: rgba(88, 166, 255, 0.06); }
+    tr:hover td { background: rgba(255, 255, 255, 0.03); }
     td a {
-      color: var(--accent);
+      color: var(--link);
       text-decoration: none;
     }
     td a:hover { text-decoration: underline; }
+    .td-task-desc { max-width: 320px; }
+    .task-desc-cell { position: relative; }
+    .task-desc-text {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      line-height: 1.5;
+      word-break: break-word;
+    }
+    .task-desc-text.expanded {
+      -webkit-line-clamp: unset;
+      line-clamp: unset;
+      display: block;
+    }
+    .expand-btn {
+      margin-top: 0.25rem;
+      padding: 0;
+      font-size: 0.8rem;
+      color: var(--link);
+      background: none;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .expand-btn:hover { text-decoration: underline; }
+    .td-op { white-space: nowrap; }
+    .col-metric { max-width: 140px; }
     .loading {
       text-align: center;
       padding: 3rem;
@@ -197,12 +251,11 @@
 <body>
   <div class="container">
     <header>
-      <h1>InternAgent 任务列表</h1>
+      <h1>InternAgent-1.5 科学发现任务列表</h1>
       <button type="button" class="btn" id="btnSubmit">提交任务</button>
     </header>
 
     <div id="tableError" class="error-msg" style="display: none;"></div>
-    <p id="tableStatus" style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.5rem;"></p>
     <div class="table-wrap">
       <table>
         <thead>
@@ -210,7 +263,7 @@
             <th>任务描述</th>
             <th>baseline代码链接</th>
             <th>数据集链接</th>
-            <th>评测指标</th>
+            <th class="col-metric">评测指标</th>
             <th>提交时间</th>
             <th>更新时间</th>
             <th>操作</th>
@@ -226,6 +279,7 @@
   <div class="modal-overlay" id="modalOverlay">
     <div class="modal">
       <h2>提交任务</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0 0 1rem;">请填写任务描述、baseline 代码链接、数据集链接与评测指标，提交后我们会尽快处理。</p>
       <form id="submitForm">
         <div class="form-group">
           <label for="taskDesc">任务描述</label>
@@ -311,24 +365,70 @@
         } catch (_) { return iso; }
       }
 
+      function escapeHtml(s) {
+        if (s == null || s === '') return '';
+        var div = document.createElement('div');
+        div.textContent = s;
+        return div.innerHTML;
+      }
+
+      function renderTaskDescCell(text) {
+        var safe = escapeHtml(text || '—');
+        return '<td class="td-task-desc"><div class="task-desc-cell">' +
+          '<div class="task-desc-text">' + safe + '</div>' +
+          '<button type="button" class="expand-btn" aria-label="展开">展开</button>' +
+          '</div></td>';
+      }
+
+      var SUBSCRIBED_KEY = 'internagent_subscribed_tasks';
+      function getSubscribedTaskIds() {
+        try {
+          var raw = localStorage.getItem(SUBSCRIBED_KEY);
+          return raw ? JSON.parse(raw) : [];
+        } catch (_) { return []; }
+      }
+      function addSubscribedTaskId(taskId) {
+        var ids = getSubscribedTaskIds();
+        if (ids.indexOf(taskId) === -1) { ids.push(taskId); localStorage.setItem(SUBSCRIBED_KEY, JSON.stringify(ids)); }
+      }
+
       function renderTable(rows) {
         const tbody = document.getElementById('tableBody');
+        var subscribedIds = getSubscribedTaskIds();
         if (!rows || rows.length === 0) {
           tbody.innerHTML = '<tr><td colspan="7" class="loading">暂无任务</td></tr>';
           return;
         }
         tbody.innerHTML = rows.map(function(r) {
           var taskId = (r.task_id || '').toString();
+          var isSubscribed = subscribedIds.indexOf(taskId) !== -1;
+          var opCell = isSubscribed
+            ? '<td class="td-op"><span class="btn-subscribe-done">已订阅</span></td>'
+            : '<td class="td-op"><button type="button" class="btn btn-subscribe" data-task-id="' + escapeHtml(taskId) + '">订阅</button></td>';
           return '<tr>' +
-            '<td>' + (r.task_desc || '—') + '</td>' +
-            '<td>' + (r.baseline_code ? '<a href="' + r.baseline_code + '" target="_blank" rel="noopener">链接</a>' : '—') + '</td>' +
-            '<td>' + (r.dataset ? '<a href="' + r.dataset + '" target="_blank" rel="noopener">链接</a>' : '—') + '</td>' +
-            '<td>' + (r.metric || '—') + '</td>' +
+            renderTaskDescCell(r.task_desc) +
+            '<td>' + (r.baseline_code ? '<a href="' + escapeHtml(r.baseline_code) + '" target="_blank" rel="noopener">链接</a>' : '—') + '</td>' +
+            '<td>' + (r.dataset ? '<a href="' + escapeHtml(r.dataset) + '" target="_blank" rel="noopener">链接</a>' : '—') + '</td>' +
+            '<td class="col-metric">' + escapeHtml(r.metric || '—') + '</td>' +
             '<td>' + formatDate(r.submission_time) + '</td>' +
             '<td>' + formatDate(r.update_time) + '</td>' +
-            '<td><button type="button" class="btn btn-subscribe" data-task-id="' + taskId + '">订阅</button></td>' +
+            opCell +
             '</tr>';
         }).join('');
+
+        tbody.querySelectorAll('.task-desc-cell').forEach(function(cell) {
+          var textEl = cell.querySelector('.task-desc-text');
+          var btn = cell.querySelector('.expand-btn');
+          if (!textEl || !btn) return;
+          var fullText = textEl.textContent || '';
+          var lineCount = (fullText.match(/\n/g) || []).length + 1;
+          if (fullText.length < 120 && lineCount <= 3) { btn.style.display = 'none'; return; }
+          btn.addEventListener('click', function() {
+            var isExpanded = textEl.classList.toggle('expanded');
+            btn.textContent = isExpanded ? '收起' : '展开';
+            btn.setAttribute('aria-label', isExpanded ? '收起' : '展开');
+          });
+        });
       }
 
       function loadTable() {
@@ -342,27 +442,15 @@
           return;
         }
 
-        var tableName = TABLE_NAME;
-        console.log('[Supabase] 正在请求表: ' + tableName + ', URL: ' + window.SUPABASE_URL);
-        supabase.from(tableName).select('*').order('submission_time', { ascending: false })
+        supabase.from(TABLE_NAME).select('*').order('submission_time', { ascending: false })
           .then(function(res) {
-            console.log('[Supabase] 响应:', { error: res.error, dataLength: (res.data && res.data.length) || 0, data: res.data });
             if (res.error) {
               errEl.textContent = '加载失败: ' + res.error.message;
               errEl.style.display = 'block';
               tbody.innerHTML = '<tr><td colspan="7" class="loading">加载失败</td></tr>';
             } else {
               errEl.style.display = 'none';
-              var rows = res.data || [];
-              var statusEl = document.getElementById('tableStatus');
-              if (statusEl) {
-                statusEl.textContent = '已连接 Supabase 表「' + tableName + '」，本次返回 ' + rows.length + ' 条。';
-                if (rows.length === 0) statusEl.textContent += ' 若表里实际有数据，请在 Supabase SQL Editor 开放 SELECT 策略（见控制台说明）。';
-              }
-              if (rows.length === 0) {
-                console.warn('[Supabase] 表里有数据但这里返回 0 条，通常是 RLS 未开放 SELECT。请在 Supabase SQL Editor 执行:\nCREATE POLICY "allow_select_tasks" ON public.tasks FOR SELECT TO anon USING (true);');
-              }
-              renderTable(rows);
+              renderTable(res.data || []);
             }
           })
           .catch(function(e) {
@@ -431,12 +519,16 @@
             if (res.error) {
               if (res.error.code === '23505' || (res.error.message && res.error.message.indexOf('duplicate') !== -1)) {
                 showToast('此邮箱已订阅此任务，请耐心等待结果哦～', 'error');
+                addSubscribedTaskId(taskId);
+                loadTable();
               } else {
                 showToast('订阅失败: ' + res.error.message, 'error');
               }
               return;
             }
             showToast('订阅成功，我们会通过邮箱通知您任务结果，请耐心等待哦～');
+            addSubscribedTaskId(taskId);
+            loadTable();
             subscribeModal.classList.remove('open');
             subscribeForm.reset();
           })
@@ -444,6 +536,8 @@
             submitBtn.disabled = false;
             if (err && err.code === '23505') {
               showToast('此邮箱已订阅此任务，请耐心等待结果哦～', 'error');
+              addSubscribedTaskId(taskId);
+              loadTable();
             } else {
               showToast('订阅失败: ' + (err && err.message ? err.message : String(err)), 'error');
             }

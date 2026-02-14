@@ -5,7 +5,7 @@
 
 
 ## 🔥 News
-- **2026.2.12**: 🔥 🔥 Leveraging the general capabilities of InternAgent 1.5, a**nyone can now submit their algorithm tasks for optimization by opening an [issue](https://github.com/InternScience/InternAgent/issues/new?template=task_submit.yml) in this repository.** We will **regularly update** the algorithm design results. For other scientific discovery tasks, please visit [Intern-Discovery](https://discovery.intern-ai.org.cn/org/ailab/).
+- **2026.2.12**: 🔥 🔥 Leveraging the general capabilities of InternAgent 1.5, a**nyone can now submit their algorithm tasks for optimization by opening an [issue](https://github.com/InternScience/InternAgent/issues/new?template=task_submit.yml) in this repository.** We will **regularly update** the algorithm design results on this [website](https://internscience.github.io/InternAgent/). For other scientific discovery tasks, please visit [Intern-Discovery](https://discovery.intern-ai.org.cn/org/ailab/).
 
 - **2026.2.10**: 🔥 Official release of the [InternAgent 1.5 Technical Report](https://huggingface.co/papers/2602.08990). InternAgent 1.5 achieves leading performance on scientific reasoning benchmarks including **GAIA, HLE, GPQA, and FrontierScience**, and supports end-to-end autonomous scientific discovery tasks across **Physical, Biology, Earth, and Life Science domains**, enabling both algorithm discovery and empirical discovery (dry/wet-lab experiments).
 
