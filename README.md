@@ -9,7 +9,7 @@
 
 ---
 
-- **2026.2.14**: 🔥 🔥 We open-source **[MLEvolve](https://github.com/InternScience/MLEvolve)**, the core implementation of InternAgent's solution optimization subsystem for algorithm design tasks. As the **open-source method** to achieve **#1 on MLEBench**, MLEvolve demonstrates powerful capabilities in solution optimization within bounded hypothesis spaces. 
+- **2026.2.14**: ❤️‍🔥❤️‍🔥 We open-source **[MLEvolve](https://github.com/InternScience/MLEvolve)**, the core implementation of InternAgent's solution optimization subsystem for algorithm design tasks. As the **open-source method** to achieve **#1 on MLEBench**, MLEvolve demonstrates powerful capabilities in solution optimization within bounded hypothesis spaces. 
 
 - **2026.2.12**: 🔥 🔥 Leveraging the general capabilities of InternAgent 1.5, **anyone can now submit their algorithm tasks for optimization by opening an [issue](https://github.com/InternScience/InternAgent/issues/new?template=task_submit.yml) in this repository.** We will **regularly update** the algorithm design results on this [website](https://internscience.github.io/InternAgent/). For other scientific discovery tasks, please visit [Intern-Discovery](https://discovery.intern-ai.org.cn/org/ailab/).
 
