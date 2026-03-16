@@ -71,6 +71,8 @@ instance/
 
 # Sphinx documentation
 docs/_build/
+# GitHub Pages 使用 anon key，可公开，已提交 docs/config.js
+# docs/config.js
 
 # PyBuilder
 .pybuilder/
