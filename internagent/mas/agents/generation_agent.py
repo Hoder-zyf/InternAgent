@@ -50,7 +50,6 @@ class GenerationAgent(BaseAgent):
                 - diversity_threshold (float): Min diversity (default: 0.3)
                 - temperature (float): Sampling temperature (optional)
         """
-        import pdb; pdb.set_trace()
 
         super().__init__(model, config)
         
